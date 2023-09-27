@@ -24,7 +24,9 @@ class MoviesTableViewController: UITableViewController {
         
         let fetchRequest: NSFetchRequest<Movie> = Movie.fetchRequest()
         
-        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true);fetchRequest.sortDescriptors = [sortDescriptor]
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
