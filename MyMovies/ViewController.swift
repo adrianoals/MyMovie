@@ -9,8 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var movies: [Movie] = []
-    
     var movie : Movie?
 
     
