@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class MoviesTableViewController: UITableViewController {
+    
+    var fetchedResultsController: NSFetchedResultsController<Movie>!
     
     var movies: [Movie] = []
     
@@ -18,14 +21,20 @@ class MoviesTableViewController: UITableViewController {
     }
 
     func loadMovies() {
-        guard let fileURL = Bundle.main.url(forResource: "movies", withExtension: "json") else {return}
-        do {
-            let data = try Data(contentsOf: fileURL)
-            movies = try JSONDecoder().decode([Movie].self,
-                     from: data)
-        } catch {
+        
+        let fetchRequest: NSFetchRequest<Movie> = Movie.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true);fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchedResultsController.delegate = self
+        do{
+            try fetchedResultsController.performFetch()
+        } catch{
             print(error.localizedDescription)
         }
+        
     }
     
     
@@ -38,19 +47,19 @@ class MoviesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return movies.count
+        return fetchedResultsController.fetchedObjects?.count ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MovieTableViewCell
         
-        let movie = movies[indexPath.row]
+        let movie = fetchedResultsController.object(at: indexPath)
 
         // Configure the cell...
         cell.lbTitle.text = movie.title
         cell.lbSummary.text = movie.summary
-        cell.ivMovie.image = UIImage(named: movie.image)
+        cell.ivMovie.image = movie.image as? UIImage
         
         return cell
     }
@@ -111,6 +120,11 @@ class MoviesTableViewController: UITableViewController {
       }
     }
     
+}
 
+extension MoviesTableViewController:NSFetchedResultsControllerDelegate{
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
+    }
 }
 

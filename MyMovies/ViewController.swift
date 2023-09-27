@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         if let movie = movie {
-            ivMovie.image = UIImage(named: movie.image)
+            ivMovie.image = movie.image as? UIImage
             lbTitle.text = movie.title
             lbCategories.text = movie.categories
             lbDuration.text = movie.duration

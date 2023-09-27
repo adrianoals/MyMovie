@@ -16,8 +16,8 @@
 		B919D1AD2AC385DC00B9DF13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B919D1AB2AC385DC00B9DF13 /* LaunchScreen.storyboard */; };
 		B919D1B52AC3886900B9DF13 /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919D1B42AC3886900B9DF13 /* MoviesTableViewController.swift */; };
 		B919D1B72AC39EB300B9DF13 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919D1B62AC39EB200B9DF13 /* Movie.swift */; };
-		B919D1BB2AC39F2200B9DF13 /* movies.json in Resources */ = {isa = PBXBuildFile; fileRef = B919D1BA2AC39F2200B9DF13 /* movies.json */; };
 		B919D1BD2AC39FD900B9DF13 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919D1BC2AC39FD900B9DF13 /* MovieTableViewCell.swift */; };
+		B999549D2AC4BB410061A559 /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999549C2AC4BB410061A559 /* UIViewController+CoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +32,8 @@
 		B919D1AE2AC385DC00B9DF13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B919D1B42AC3886900B9DF13 /* MoviesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		B919D1B62AC39EB200B9DF13 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		B919D1BA2AC39F2200B9DF13 /* movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movies.json; sourceTree = "<group>"; };
 		B919D1BC2AC39FD900B9DF13 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		B999549C2AC4BB410061A559 /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,14 +66,14 @@
 		B919D19C2AC385DA00B9DF13 /* MyMovies */ = {
 			isa = PBXGroup;
 			children = (
-				B919D1BA2AC39F2200B9DF13 /* movies.json */,
 				B919D19D2AC385DA00B9DF13 /* AppDelegate.swift */,
 				B919D19F2AC385DA00B9DF13 /* SceneDelegate.swift */,
 				B919D1A12AC385DA00B9DF13 /* ViewController.swift */,
-				B919D1A32AC385DA00B9DF13 /* Main.storyboard */,
-				B919D1B42AC3886900B9DF13 /* MoviesTableViewController.swift */,
-				B919D1BC2AC39FD900B9DF13 /* MovieTableViewCell.swift */,
 				B919D1B62AC39EB200B9DF13 /* Movie.swift */,
+				B919D1A32AC385DA00B9DF13 /* Main.storyboard */,
+				B999549C2AC4BB410061A559 /* UIViewController+CoreData.swift */,
+				B919D1BC2AC39FD900B9DF13 /* MovieTableViewCell.swift */,
+				B919D1B42AC3886900B9DF13 /* MoviesTableViewController.swift */,
 				B919D1A92AC385DC00B9DF13 /* Assets.xcassets */,
 				B919D1AB2AC385DC00B9DF13 /* LaunchScreen.storyboard */,
 				B919D1AE2AC385DC00B9DF13 /* Info.plist */,
@@ -142,7 +142,6 @@
 			files = (
 				B919D1AD2AC385DC00B9DF13 /* LaunchScreen.storyboard in Resources */,
 				B919D1AA2AC385DC00B9DF13 /* Assets.xcassets in Resources */,
-				B919D1BB2AC39F2200B9DF13 /* movies.json in Resources */,
 				B919D1A52AC385DA00B9DF13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +158,7 @@
 				B919D1BD2AC39FD900B9DF13 /* MovieTableViewCell.swift in Sources */,
 				B919D1B72AC39EB300B9DF13 /* Movie.swift in Sources */,
 				B919D1A82AC385DA00B9DF13 /* MyMovies.xcdatamodeld in Sources */,
+				B999549D2AC4BB410061A559 /* UIViewController+CoreData.swift in Sources */,
 				B919D1B52AC3886900B9DF13 /* MoviesTableViewController.swift in Sources */,
 				B919D1A02AC385DA00B9DF13 /* SceneDelegate.swift in Sources */,
 			);
